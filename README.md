@@ -428,7 +428,7 @@ axis[1, 1].set_xlabel("Average word length");
 The `excerpt` and corresponding `target` has been assessed by multiple experts and the `standard_error` is calculated on the differences in opinion between these. As mentioned, this attribute is only available in the training dataset, but is worth pointing out again.
 <br>
 <br>
-Quite a lot can be said about the pair plot seen in figure 7. Most interestingly among these are the horizontal 'smiley' shape seen in the right uppermost plot. This shape suggests that the experts tend to disagree more on `excerpt` located in the tails of the `target`-distribution (i.e. the very hard and the very easy texts) which seems very reasonable. Secondly, The average STD lay somewhere between 0.45 and 0.5 which is a pretty significant STD for a variable (i.e. `target`) ranging from -3.7 to 1.7. With that said, the relatively modest spread in the STD itself is pretty impressive, given how challenging it most be to objectively measure readability.
+Quite a lot can be said about the pair plot seen in figure 7. Most interestingly among these are the horizontal/vertical 'smiley' shape seen in the right uppermost plot and left lowermost plot. This shape suggests that the experts tend to disagree more on `excerpt` located in the tails of the `target`-distribution (i.e. the very hard and the very easy texts) which seems very reasonable. Secondly, The average STD lay somewhere between 0.45 and 0.5 which is a pretty significant STD for a variable (i.e. `target`) ranging from -3.7 to 1.7. With that said, the relatively modest spread in the STD itself is pretty impressive, given how challenging it most be to objectively measure readability.
 <br>
 <br>
 
@@ -1025,7 +1025,7 @@ stats.to_csv("stats.csv", index=False)
 
 
 ## 4.2.) Performance plots
-Figure 10 is a bit cluttered, but one can definitely see that all folds tend to converge towards a somewhat similar point. This is reassuring to see because it confirm the stratified splits was done somewhat competently (e.g. there's not 4 very good folds and 1 very bad.)
+Figure 10 is a bit cluttered, but you can still see that there is a  somewhat coherent trend between all 5 models regardless of the fold.  This is reassuring to see because it means that the stratified splits were done somewhat competently (e.g. there's not 4 very good folds and 1 very bad.)
 <br>
 It's always a bit subjective to evaluate stuff like this, but I feel it reasonable to say that the models' overall performance is decent. The model is learning at a reasonable rate and there are no unpredictable fluctuations (which can be seen in both figure 10 and 11).
 <br>
