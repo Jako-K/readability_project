@@ -1019,6 +1019,8 @@ stats.to_csv("stats.csv", index=False)
 </p>
 
 
+<p align="center">
+<p align="center">
 <div>
 <table border="1" class="dataframe">
   <thead>
@@ -1112,6 +1114,9 @@ stats.to_csv("stats.csv", index=False)
 </table>
 <p>100 rows × 4 columns</p>
 </div>
+
+</p>
+
 
 
 
