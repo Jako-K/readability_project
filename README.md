@@ -1027,7 +1027,7 @@ stats.to_csv("stats.csv", index=False)
 ## 4.2.) Performance plots
 Figure 10 is a bit cluttered, but you can still see that there is a  somewhat coherent trend between all 5 models regardless of the fold.  This is reassuring to see because it means that the stratified splits were done somewhat competently (e.g. there's not 4 very good folds and 1 very bad.)
 <br>
-It's always a bit subjective to evaluate stuff like this, but I feel it reasonable to say that the models' overall performance is decent. The model is learning at a reasonable rate and there are no unpredictable fluctuations (which can be seen in both figure 10 and 11).
+It's always a bit subjective to evaluate stuff like this, but I feel it's reasonable to say that the models' overall performance is quite good. The models are learning at a reasonable rate and there are no unpredictable fluctuations which can be seen in both figure 10 and 11.
 <br>
 <br>
 
