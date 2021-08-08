@@ -9,17 +9,17 @@ This project is based on the Kaggle competition [CommonLit Readability Prize](ht
 ## Project overview
 The project (i.e. this notebook) is separated into 4 sections:
 
-      1.) Data exploration, cleaning and preprocessing
+      1.) Data exploration and preprocessing:
       General overview, data cleaning, stratified folds
       
-      2.) Training preparation
-      BERT model & tokenizer, Augmentation, DataLoader, Optimizer, LR-scheduler, loss.
+      2.) Training preparation:
+      BERT model & tokenizer, Augmentation, DataLoader, Optimizer, LR-scheduler, loss
       
-      3.) Training with Weights and Biases
+      3.) Training with Weights and Biases:
       Training and evaluation of the BERT model
       
-      4.) Final evaluation
-      Analysis of the results and kaggle submission
+      4.) Final evaluation:
+      Result analysis and kaggle submission
 
 ## Foldable code
 All code in this notebook is foldable. This was done in an attempt to increase readability and avoid overcluttered sections.  Example:
@@ -79,10 +79,10 @@ transformers.logging.set_verbosity_error()
 There are 3 interesting variables in the dataset `excerpt`, `target` and `standard_error`. `excerpt` contains the text which should be used to predict readability scores i.e. `target` and the `standard_error` tell us how much disagreement there were between the experts that annotated the `excerpt`.
 <br>
 <br>
-There are some differences between the `train.csv` and the `test.csv` dataset; Namely that `train.csv` contains two extra columns of data: `target` and `standard_error`. `target` is obviously not present in the `test.csv` since it's the thing we try to predict. `standard_error` is however not supposed to be predicted, which means that `standard_error` is available during training and not during inference which ought to be kept in mind when designing the model. 
+There are some differences between the `train.csv` and the `test.csv` dataset. Namely that `train.csv` contains two extra columns of data: `target` and `standard_error`. `target` is obviously not present in the `test.csv` since it's the thing we try to predict. `standard_error` is however not supposed to be predicted, which means that `standard_error` is available during training and not during inference which ought to be kept in mind when designing the model. 
 <br>
 <br>
-Note that the real `test.csv` file contains much more than the 7 samples we can see here, but that these remaining samples are kept hidden until submission.
+Note that the real `test.csv` file contains much more than the 7 samples we can see here, but these remaining samples are kept hidden until submission.
 
 <br>
 
@@ -101,7 +101,9 @@ df_test
 ```
 </details>
 
+```python
 Train samples: 2834
+```
 
 <div>
 <table border="1" class="dataframe">
@@ -166,7 +168,9 @@ Train samples: 2834
 </table>
 </div>
 
-    Test samples: 7
+```python
+Test samples: 7
+```
 
 <div>
 <table border="1" class="dataframe">
@@ -238,7 +242,7 @@ Train samples: 2834
 
 
 ## 1.3.) Remove the columns _url_legal_ and _license_
-It's hard to see how the two columns `url_legal` and `license` can add much predictive power to the model (even if they weren't missing most of their values i.e. filled with `NaNs`, which they are). Furthermore, the official description of the data points out that the real `test.csv` doesn't contain any values for `url_legal` or `license`. Because of this, I think removing them right away is the smartest thing to do. I might try and see if they can benefit the model in any way later on, but gonna keep it simple for now.
+It's hard to see how the two columns `url_legal` and `license` can add much predictive power to the model (even if they weren't missing most of their values, which they are). Furthermore, the official description of the data points out that the real `test.csv` doesn't contain any values for `url_legal` or `license`. Because of this, I think removing them right away is the smartest thing to do. I might try and see if they can benefit the model in any way later on, but gonna keep it simple for now.
 
 <br>
 
@@ -792,7 +796,7 @@ The learning rate scheduler was found with a small Jupyter notebook GUI I have w
 
 ## 2.6.) Data augmentation
 
-Data augmentation is always a good idea because it simply increases the amount of data available for training. This is especially attractive in our case, due to the relatively modest provided data (\~2800 samples). I tried a bunch of different things and was quite surprised how poorly they all worked. 
+Data augmentation is always a good idea because it 'increases' the amount of data available for training. This is especially attractive in our case due to the relatively modest amount of data (\~2800 samples). I tried a bunch of different things and was quite surprised how poorly they all worked. 
 
 <br>
 
@@ -1031,7 +1035,7 @@ It's always a bit subjective to evaluate stuff like this, but I feel it's reason
 <br>
 <br>
 
-The estimated score from all 5 models was 0.533 and Kaggle submission gave 0.524, which is surprisingly close. The best public score I have obtained is 0.505. 
+The estimated score from all 5 models was 0.533 and the Kaggle submission gave 0.524 which is surprisingly close. The best public score I have obtained is 0.505. 
 
 <details>
 <summary><b><u>PRESS THIS TO SEE THE CODE</u></b></summary>
