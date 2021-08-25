@@ -1,4 +1,4 @@
-`Natural language processing`, `Exploratory data analysis`,  `Visualizations`, `Data cleaning`,  `Augmentation`, `Pytorch`, `Python` ,`Pandas`, `BERT`, `Model training and evaluation`, `Weights and biases`, `Kaggle`, `Regression`
+`Machine learning`, `Natural language processing`, `Exploratory data analysis`,  `Visualizations`, `Data cleaning`,  `Augmentation`, `Pytorch`, `Python` ,`Pandas`, `BERT`, `Model training and evaluation`, `Weights and biases`, `Kaggle`, `Regression`
 <br>
 
 # 	Project overview and foldable code
@@ -7,6 +7,13 @@ This project is based on the Kaggle competition [CommonLit Readability Prize](ht
 <br>
 
 ## Project overview
+
+![png](./readme_res/readability_overview.png)
+
+<br>
+
+## Project overview - In details
+
 The project (i.e. this notebook) is separated into 4 sections:
 
       1.) Data exploration and preprocessing:
