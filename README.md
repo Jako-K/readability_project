@@ -8,7 +8,9 @@ This project is based on the Kaggle competition [CommonLit Readability Prize](ht
 
 ## Project overview
 
-![png](./readme_res/readability_overview.png)
+<p align="center">
+  <img src="./readme_res/readability_overview.png" alt="Drawing"/>
+</p>
 
 <br>
 
